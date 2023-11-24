@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^5.3.2",
-    "bootstrap-icons": "^1.11.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoelSam1/Javascript2.git"
   },
-  "devDependencies": {
-    "sass": "^1.69.5"
-  }
+  "keywords": [
+    "Bootstrap",
+    "SASS",
+    "SCSS"
+  ],
+  "author": "Yoel Samson",
+  "license": "ISC"
 }
