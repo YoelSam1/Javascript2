@@ -16,5 +16,8 @@
     "SCSS"
   ],
   "author": "Yoel Samson",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
 }
