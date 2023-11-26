@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Description"
+      content="feed page posts thumbnails, a search bar, sort options and a form to create a new post"
+    />
+    <title>Profile</title>
+    <link href="../dist/css/index.css" rel="stylesheet" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="bg-light">
+    <!--Head-->
+    <head>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="/profile">Car Media</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="/"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active fw-bold"
+                  aria-current="page"
+                  href="/feed"
+                  >Feed</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active fw-bold"
+                  aria-current="page"
+                  href="/profile"
+                  >Profile</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </head>
+
+    <!--Main-->
+    <main>
+      <section>
+        <div class="container mt-5">
+          <h1 class="mb-5">Feed Page</h1>
+
+          <!-- Search Bar -->
+          <form class="col-10">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search for posts..."
+              />
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Sort Options -->
+          <div class="form-group mb-4 mr-3 col-9">
+            <label for="sortSelect">Sort By:</label>
+            <select class="form-control" id="sortSelect">
+              <option>Newest</option>
+              <option>Oldest</option>
+              <option>Most Popular</option>
+            </select>
+          </div>
+
+          <!-- Post Thumbnails -->
+          <div class="container mt-4">
+            <h3>User Posts</h3>
+            <div class="row">
+              <!--img-1-->
+              <div class="col-8 col-sm-4 col-xs-2 mt-4">
+                <div class="card">
+                  <img
+                    src="/img/cards.jpg"
+                    class="card-img-top"
+                    alt="Fast Cars"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Fast Cars</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--img-2-->
+              <div class="col-8 col-sm-4 col-xs-2 mt-4">
+                <div class="card">
+                  <img
+                    src="/img/blackcars.jpg"
+                    class="card-img-top"
+                    alt="Muscle Cars"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Muscle Cars</h5>
+                    <p class="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post Form -->
+          <h3 class="mt-5">Create a New Post</h3>
+          <form class="mr-3 col-9">
+            <div class="form-group mb-3">
+              <label for="postTitle">Title:</label>
+              <input type="text" class="form-control" id="postTitle" />
+            </div>
+            <div class="form-group">
+              <label for="postDescription">Description:</label>
+              <textarea
+                class="form-control"
+                id="postDescription"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="form-group my-custom-margin mb-3 col-9">
+              <label for="postImage">Upload an Image</label>
+              <input type="file" class="form-control-file" id="postImage" />
+            </div>
+            <button type="submit" class="btn btn-primary">Create Post</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer class="bg-dark py-5 mt-5">
+      <div class="container text-light text-center col-8 col-sm-4">
+        <p class="display-5 mb-3">Contact Us</p>
+        <small class="text-white-50"
+          >&copy; Copyright. All right reserved.</small
+        >
+      </div>
+    </footer>
+  </body>
+</html>
