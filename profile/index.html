@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Description"
+      content="profile page a profile image, username, list of user posts, follow button and an area to display following/followers."
+    />
+    <title>Profile</title>
+    <link href="../dist/css/index.css" rel="stylesheet" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/profile.mjs" type="module"></script>
+  </head>
+  <body class="bg-light">
+    <!--Head-->
+    <head>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="/profile">Car Media</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="/"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active fw-bold"
+                  aria-current="page"
+                  href="/feed"
+                  >Feed</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active fw-bold"
+                  aria-current="page"
+                  href="/profile"
+                  >Profile</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </head>
+
+    <!--Main-->
+    <main>
+      <section>
+        <div class="text-center fw-bold mt-4 mb-3">
+          <h1>Carlo james</h1>
+        </div>
+        <div class="container mb-4 col-4 col-sm-2">
+          <img
+            src="/img/profileavatar.jpg"
+            class="img-fluid rounded-circle"
+            alt="Profile Image"
+          />
+        </div>
+        <div class="text-center mt-3">
+          <button class="btn btn-primary fluid fw-bold">Follow</button>
+        </div>
+        <div class="text-center">
+          <p class="text-decoration-none coloe">
+            <li class="list-group-item fw-bold text-success">Following 16</li>
+            <li class="list-group-item fw-bold text-info">Followers 20</li>
+          </p>
+        </div>
+        <div class="container mt-4">
+          <h3>User Posts</h3>
+          <div class="row">
+            <!--img-1-->
+            <div class="col-8 col-sm-4 col-xs-2 mt-4">
+              <div class="card">
+                <img
+                  src="/img/cards.jpg"
+                  class="card-img-top"
+                  alt="Fast Cars"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Fast Cars</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--img-2-->
+            <div class="col-8 col-sm-4 col-xs-2 mt-4">
+              <div class="card">
+                <img
+                  src="/img/blackcars.jpg"
+                  class="card-img-top"
+                  alt="Muscle Cars"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Muscle Cars</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer class="bg-dark py-5 mt-5">
+      <div class="container text-light text-center col-8 col-sm-4">
+        <p class="display-5 mb-3">Contact Us</p>
+        <small class="text-white-50"
+          >&copy; Copyright. All right reserved.</small
+        >
+      </div>
+    </footer>
+  </body>
+</html>
