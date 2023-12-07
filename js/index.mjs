@@ -1,11 +1,19 @@
+import { APIURL } from "./api.mjs";
+
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const loginForm = document.querySelector("#login-form");
 
-const baseURL = "https://api.noroff.dev/api/v1/social/auth/login";
+const baseURL = APIURL + "/social/auth/login";
 
 // event listener for form
-loginForm.addEventListener("submit", (e) => {
+loginForm.addEventListener("submit", login);
+
+/**
+ * function to log user in
+ * @param {Object} e - event emitter object with preventDefault() function
+ */
+function login(e) {
   e.preventDefault(); // prevent default refresh
   let emailVal = email.value;
   let passVal = password.value;
@@ -34,4 +42,4 @@ loginForm.addEventListener("submit", (e) => {
         window.location.href = "/profile";
       }
     });
-});
+}
