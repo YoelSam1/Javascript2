@@ -16,10 +16,12 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/profile.mjs" type="module"></script>
+    <script src="/js/header.mjs" type="module"></script>
   </head>
   <body class="bg-light">
     <!--Head-->
-    <head>
+    <!--Head-->
+    <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand fw-bold" href="/profile">Car Media</a>
@@ -35,91 +37,45 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
-              <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="/"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active fw-bold"
-                  aria-current="page"
-                  href="/feed"
-                  >Feed</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active fw-bold"
-                  aria-current="page"
-                  href="/profile"
-                  >Profile</a
-                >
-              </li>
-            </ul>
+            <!-- link information here -->
           </div>
         </div>
       </nav>
-    </head>
+    </header>
 
     <!--Main-->
     <main>
       <section>
         <div class="text-center fw-bold mt-4 mb-3">
-          <h1>Carlo james</h1>
+          <h1 class="username">Carlo james</h1>
         </div>
-        <div class="container mb-4 col-4 col-sm-2">
-          <img
-            src="/img/profileavatar.jpg"
-            class="img-fluid rounded-circle"
-            alt="Profile Image"
-          />
-        </div>
-        <div class="text-center mt-3">
-          <button class="btn btn-primary fluid fw-bold">Follow</button>
-        </div>
-        <div class="text-center">
-          <p class="text-decoration-none coloe">
-            <li class="list-group-item fw-bold text-success">Following 16</li>
-            <li class="list-group-item fw-bold text-info">Followers 20</li>
-          </p>
-        </div>
+
+        <!-- Post Form -->
         <div class="container mt-4">
-          <h3>User Posts</h3>
-          <div class="row">
-            <!--img-1-->
-            <div class="col-8 col-sm-4 col-xs-2 mt-4">
-              <div class="card">
-                <img
-                  src="/img/cards.jpg"
-                  class="card-img-top"
-                  alt="Fast Cars"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Fast Cars</h5>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </div>
-              </div>
+          <h3 class="mt-5">Create a New Post</h3>
+          <div class="mr-3 col-9">
+            <div class="form-group mb-3">
+              <label for="feedTitle">Title:</label>
+              <input type="text" class="form-control" id="feedTitle" />
             </div>
-            <!--img-2-->
-            <div class="col-8 col-sm-4 col-xs-2 mt-4">
-              <div class="card">
-                <img
-                  src="/img/blackcars.jpg"
-                  class="card-img-top"
-                  alt="Muscle Cars"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Muscle Cars</h5>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </div>
-              </div>
+            <div class="form-group">
+              <label for="feedDescription">Description:</label>
+              <textarea
+                class="form-control"
+                id="feedDescription"
+                rows="4"
+              ></textarea>
             </div>
+            <button type="submit" class="btn btn-primary mt-3 feedBtn">
+              Create Feed
+            </button>
+          </div>
+        </div>
+
+        <div class="container mt-4">
+          <h3>User Feeds</h3>
+          <div class="feeds user-feed">
+            <!--render feeds here-->
           </div>
         </div>
       </section>
