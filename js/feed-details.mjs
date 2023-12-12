@@ -1,6 +1,8 @@
+import { APIURL } from "./api.mjs";
+
 let feedDetailsContainer = document.querySelector(".feed-details");
 const feedId = window.location.href.split("=")[1];
-const baseURL = "https://api.noroff.dev/api/v1/social/posts/" + feedId;
+const baseURL = `${APIURL}/social/posts/${feedId}`;
 
 const storedUser = JSON.parse(localStorage.getItem("media-user"));
 
@@ -15,7 +17,12 @@ if (storedUser) {
       Authorization: "Bearer " + storedUser.accessToken,
     },
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`Network response was not ok: ${res.status}`);
+      }
+      return res.json();
+    })
     .then((feed) => {
       const { title, created, tags, body } = feed;
       feedDetailsContainer.innerHTML += ` 
@@ -27,8 +34,11 @@ if (storedUser) {
             <p class="card-text">
               Body: ${body}
             </p>
-
         `;
-      //if (data?.errors) return alert(data.errors[0].message);
+    })
+    .catch((error) => {
+      console.error("Fetch error:", error);
     });
+} else {
+  console.error("No stored user found");
 }
