@@ -5,37 +5,12 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm-password");
 const registerForm = document.querySelector("#register-form");
+const errorContainer = document.querySelector("#error-container");
 
-const baseURL = APIURL + "/social/auth/register";
+const baseURL = `${APIURL}/social/auth/register`;
 
 // event listener for form
 registerForm.addEventListener("submit", register);
-
-/**
- * function to test name
- * @param {string} name - name of user
- * @returns boolean - true or false if name passes test
- */
-function validateName(name) {
-  // Define a regular expression pattern for valid names
-  var nameRegex = /^[a-zA-Z0-9_]+$/;
-
-  // Return the validation result
-  return nameRegex.test(name);
-}
-
-/**
- * function to test email
- * @param {string} email -this is email of the user
- * @returns boolean - true or false if email passes test
- */
-function validateEmail(email) {
-  // Define a regular expression pattern for valid email addresses
-  var emailRegex = /^[a-zA-Z0-9._-]+@(stud\.)?noroff\.no$/;
-
-  // Return the validation result
-  return emailRegex.test(email);
-}
 
 /**
  * function to register a user
@@ -48,11 +23,13 @@ function register(e) {
   let passVal = password.value;
   let confirmPassVal = confirmPassword.value;
 
-  // validation
-  if (!validateName(nameVal)) return alert("Invalid name!");
-  if (!validateEmail(emailVal))
-    return alert("Email must be a valid @noroff.no or @stud.noroff.no!");
-  if (passVal !== confirmPassVal) return alert("passwords must match!");
+  // Validate email domain
+  if (!isValidEmail(emailVal)) {
+    displayError(
+      "Invalid email address. You can only register with noroff.no or stud.noroff.no email."
+    );
+    return;
+  }
 
   const data = {
     name: nameVal,
@@ -67,12 +44,43 @@ function register(e) {
       "content-type": "Application/json",
     },
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      return res.json();
+    })
     .then((data) => {
-      //console.log(data);
-      if (data?.errors) return alert(data.errors[0].message);
+      if (data?.errors) {
+        throw new Error(data.errors[0].message);
+      }
 
-      if (data?.id) alert("successfully registered, login now!");
-      window.location.href = "/index.html";
+      if (data?.id) {
+        alert("Successfully registered, login now!");
+        window.location.href = "/index.html";
+      }
+    })
+    .catch((error) => {
+      // console.error("Error:", error.message);
+      alert("An error occurred. Please try again.");
+      // can log the error or perform additional error handling here.
     });
+}
+/**
+ * The email value must be a valid stud.noroff.no or noroff.no email address.
+ * @param {string} email - The email address to validate
+ * @returns {boolean} - True if the email domain is valid, false otherwise
+ */
+function isValidEmail(email) {
+  const validDomains = ["noroff.no", "stud.noroff.no"];
+  const domain = email.split("@")[1];
+  return validDomains.includes(domain);
+}
+
+/**
+ * Display error message in the error container
+ * @param {string} errorMessage - The error message to display
+ */
+function displayError(errorMessage) {
+  errorContainer.innerHTML = `<p class="error-message">${errorMessage}</p>`;
 }
