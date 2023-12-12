@@ -59,6 +59,8 @@
                     type="email"
                     class="form-control"
                     id="email"
+                    pattern=".+@(noroff\.no|stud\.noroff\.no)$"
+                    title="Email must be a valid @noroff.no or @stud.noroff.no"
                     placeholder="Email"
                     required
                   />
@@ -85,9 +87,6 @@
                 </div>
               </form>
               <!--Form close-->
-
-              <!-- Error Container -->
-              <div id="error-container" class="mt-3"></div>
             </div>
           </div>
         </div>
