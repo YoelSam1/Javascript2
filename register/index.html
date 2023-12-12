@@ -64,6 +64,7 @@
                     class="form-control"
                     placeholder="Your Name"
                     id="name"
+                    title="Invalid name. Only letters, numbers, and underscores are allowed."
                     required
                   />
                 </div>
@@ -76,6 +77,7 @@
                     class="form-control"
                     id="email"
                     placeholder="Email"
+                    title="Email must be a valid @noroff.no or @stud.noroff.no"
                     required
                   />
                 </div>
@@ -101,6 +103,10 @@
                     id="confirm-password"
                     class="form-control"
                     placeholder="Confirm Password"
+                    minlength="8"
+                    pattern="^.{8,}$"
+                    title="Passwords must match and be at least 8 characters long"
+                    required
                   />
                 </div>
                 <div class="d-grid">
@@ -118,6 +124,8 @@
                   </p>
                 </div>
               </form>
+              <!-- Error Container -->
+              <div id="error-container" class="mt-3"></div>
             </div>
           </div>
         </div>
