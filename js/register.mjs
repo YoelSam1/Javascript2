@@ -1,10 +1,11 @@
-import { APIURL } from "./api.mjs";
+const APIURL = "your_api_url_here"; // Replace with your actual API URL
 
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm-password");
 const registerForm = document.querySelector("#register-form");
+const errorContainer = document.querySelector("#error-container");
 
 const baseURL = `${APIURL}/social/auth/register`;
 
@@ -23,8 +24,10 @@ function register(e) {
   let confirmPassVal = confirmPassword.value;
 
   // validation
-
-  if (passVal !== confirmPassVal) return alert("passwords must match!");
+  if (!isValidPasswordConfirmation(password.value, confirmPassVal)) {
+    displayError("Passwords do not match.");
+    return;
+  }
 
   const data = {
     name: nameVal,
@@ -60,4 +63,22 @@ function register(e) {
       alert("An error occurred. Please try again.");
       // can log the error or perform additional error handling here.
     });
+}
+
+/**
+ * The password confirmation value must match the password.
+ * @param {string} password - The password to compare
+ * @param {string} confirmPass - The confirmation password to validate
+ * @returns {boolean} - True if the passwords match, false otherwise
+ */
+function isValidPasswordConfirmation(password, confirmPass) {
+  return password === confirmPass;
+}
+
+/**
+ * Displays an error message in the specified error container.
+ * @param {string} errorMessage - The error message to display
+ */
+function displayError(errorMessage) {
+  errorContainer.innerHTML = `<p class="error-message">${errorMessage}</p>`;
 }
