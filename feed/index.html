@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Description"
+      content="feed page posts thumbnails, a search bar, sort options and a form to create a new post"
+    />
+    <title>Car media | Feed</title>
+    <link href="../dist/css/index.css" rel="stylesheet" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/header.mjs" type="module"></script>
+    <script src="/js/feed.mjs" type="module"></script>
+  </head>
+
+  <body class="bg-light">
+    <!--Head-->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="/profile">Car Media</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- link information here -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Main-->
+    <main>
+      <section>
+        <div class="container mt-5">
+          <h1 class="mb-5 text-center">
+            Feeds
+            <a href="/profile" class="btn btn-primary">Create Feed</a>
+          </h1>
+
+          <!-- Search Bar -->
+          <div class="container m-3">
+            <div class="row">
+              <div class="col-md-8 mx-auto">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  aria-describedby="basic-addon2"
+                  id="searchInput"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Sort Options -->
+          <div class="container m-3">
+            <div class="row">
+              <div class="col-md-8 mx-auto">
+                <select class="form-control" id="filterSelect">
+                  <option value="">Filter by:</option>
+                  <option value="newest">Newest</option>
+                  <option value="oldest">Oldest</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="feeds">
+            <!--render feeds here-->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer class="bg-dark py-5 mt-5">
+      <div class="container text-light text-center col-8 col-sm-4">
+        <p class="display-5 mb-3">Contact Us</p>
+        <small class="text-white-50"
+          >&copy; Copyright. All right reserved.</small
+        >
+      </div>
+    </footer>
+  </body>
+</html>

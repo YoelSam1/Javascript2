@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Description"
+      content="profile page a profile image, username, list of user posts, follow button and an area to display following/followers."
+    />
+    <title>Car media | Profile</title>
+    <link href="../dist/css/index.css" rel="stylesheet" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/profile.mjs" type="module"></script>
+    <script src="/js/header.mjs" type="module"></script>
+  </head>
+  <body class="bg-light">
+    <!--Head-->
+    <!--Head-->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="/profile">Car Media</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- link information here -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Main-->
+    <main>
+      <section>
+        <div class="text-center fw-bold mt-4 mb-3">
+          <h1 class="username">Carlo james</h1>
+        </div>
+
+        <!-- Post Form -->
+        <div class="container mt-4">
+          <h3 class="mt-5">Create a New Post</h3>
+          <div class="mr-3 col-9">
+            <div class="form-group mb-3">
+              <label for="feedTitle">Title:</label>
+              <input type="text" class="form-control" id="feedTitle" />
+            </div>
+            <div class="form-group">
+              <label for="feedDescription">Description:</label>
+              <textarea
+                class="form-control"
+                id="feedDescription"
+                rows="4"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3 feedBtn">
+              Create Feed
+            </button>
+          </div>
+        </div>
+
+        <div class="container mt-4">
+          <h3>User Feeds</h3>
+          <div class="feeds user-feed">
+            <!--render feeds here-->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer class="bg-dark py-5 mt-5">
+      <div class="container text-light text-center col-8 col-sm-4">
+        <p class="display-5 mb-3">Contact Us</p>
+        <small class="text-white-50"
+          >&copy; Copyright. All right reserved.</small
+        >
+      </div>
+    </footer>
+  </body>
+</html>
